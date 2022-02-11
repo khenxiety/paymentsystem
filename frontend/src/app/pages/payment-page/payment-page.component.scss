@@ -1,35 +1,90 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+
 header{
+    position: sticky;
+    top: 0;
+    z-index: 1;
     height: 70px;
     background-color: #fff;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
     display: flex;
     align-items:center ;
     justify-content: space-between;
-    padding: 10px 5px;
+    padding: 10px 20px;
+    transition: all .2s ease;
 
 
     .left-nav{
         display: flex;
         align-items: center;
+        i{
+            
+            margin:0;
+        }
     }
+    .right-nav{
+        display: flex;
+        align-items: center;
+        position: relative;
+        gap: 10px;
+
+        .school{
+            font-family: 'Merriweather', serif;
+            font-weight: bold;
+            color: #2e2e2e;
+        }
+    }
+}
+header.open{
+    height: 100px;
+    
+    
 }
 .body{
     padding-top: 100px;
     padding-bottom: 100px;
+
+
+
+    .school-name{
+        font-size: 1.7rem;
+        font-family: 'Merriweather', serif;
+        font-weight: bold;
+            color: #2e2e2e;
+
+    }
 }
 
 .texts{
-    padding-left:100px;padding-right:100px;
+    padding-left:100px;
+    padding-right:100px;
+}
+.cont{
+    padding-left:250px;
+    padding-right:250px;
+
 }
 
 .card{
     padding: 40px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    // box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+
     .card-body{
         form{
             display: flex;
             flex-direction: column;
             gap: 12px;
+
+            label{
+                margin-bottom: 5px;
+                color: #626262;
+                
+
+            }
         }
     }
 }
@@ -38,19 +93,52 @@ header{
     width: 100%;
     background-color: var(--indigo);
     color: white;
+    font-size: .8rem;
+
+    display: inline-block;
+    letter-spacing: normal;
+    word-spacing: normal;
+}
+
+.menu-button{
+    border: none;
+    background-color: transparent;
+    display: none;
+
+    i{
+        color: #626262;
+    }
 }
 
 
-
-
+footer{
+    text-align: center;
+}
 .text{
     display: flex;
     flex-direction: column;
+    h1{
+        
+        font-size: 1.8rem;
+        
+        font-weight: bold;
+        color: #626262;
+    }
+    p{
+        color: #626262;
+
+        
+    }
+    
+    span{
+        font-weight: bold;
+    }
+    
 
 }
 
 .top-footer{
-    background-color: #7366ff31;
+    background-color: #7366ff3a;
     
     padding: 10px 10px;
 
@@ -59,8 +147,30 @@ header{
 }
 
 .partners{
-    display: grid;
-    place-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    // display: grid;
+    // place-items: center;
+    // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    // background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h3{
+        font-size: .8rem;
+        color: var(--gray);
+        
+    }
+
     
 }
+
+@media (max-width: 770px) {
+  
+    .menu-button{
+        display: block;
+    }
+    
+  }
+
+
+
+

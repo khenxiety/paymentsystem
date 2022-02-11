@@ -1,36 +1,43 @@
-<header>
+<header class="" id="header">
+    <div class="right-nav">
+        <img src="/assets/image 2.png" height="45px" width="45px" alt="">
+        <span class="school">CLARET SCHOOL OF QUEZON CITY</span>
+
+
+
+    </div>
     <div class="left-nav" >
         <a href="" class="left-nav" style="text-decoration: none;">
-            <i class="uil uil-angle-left" style="font-size: 2.5rem;"></i>
             <span style="font-weight:500;">Back to Portal</span>
 
+            <i class="uil uil-angle-right" style="font-size: 2rem;"></i>
+
         </a>
+        <button (click)="applyclass()" class="menu-button btn"><i class="uil uil-bars" style="font-size: 2rem;"></i></button>
         
 
 
     </div>
-    <div class="right-nav">
-        <p>left</p>
-    </div>
+    
 
 </header>
 
 
 <div class="body">
     <div class="container-fluid" >
+        <div class="container">
         <div class="row">
-            <div class="col" >
-                <div class="texts" >
+            <div class="col-lg-7 col-sm-12 mb-5 px-5">
                     <div class="row">
                         <div class="logo" style="display: grid; place-items: center; ">
                             <img src="/assets/image 2.png" height="150px" width="150px" alt="">
                             <br>
-                            <span style="font-size: 1.5rem;">CLARET SCHOOL OF QUEZON CITY</span>
+                            <span class="school-name" style="margin-bottom: 10px; margin-top: 10px;">CLARET SCHOOL OF QUEZON CITY</span>
                         </div>
     
     
                     </div>
-                    <hr>
+                    <hr style="border: 2px solid gray;">
                     <div class="row">
                         <div class="text">
                             <h1>Fill-out the form
@@ -39,59 +46,58 @@
                             
 
                             <ul>
-                                <li><p>Step 1: Fill-out the payment form.</p></li>
-                                <li><p>Step 2: Select your preferred payment channel.</p></li>
-                                <li><p>Step 3: Follow the payment instructions.</p></li>
+                                <li><p><span>Step 1:</span>  Fill-out the payment form.</p></li>
+                                <li><p><span>Step 2:</span> Select your preferred payment channel.</p></li>
+                                <li><p><span>Step 3:</span> Follow the payment instructions.</p></li>
                             </ul>
-                            <p>Note: A convenience fee will be charged in addition to your total due depending on the channel you selected.</p>
+                            <p><span>Note:</span>  A convenience fee will be charged in addition to your total due depending on the channel you selected.</p>
                         </div>
     
                     </div>
 
-                </div>
                 
                 
             </div>
             <div class="col-lg-5 col-sm-12" >
                 <div class="card" >
                     <div class="card-body">
-                        <form >
+                        <form (ngSubmit)="test()">
                             <div class="form-group">
                               <label for="exampleInputEmail1">School Name</label>
-                              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                              <input type="text" name="schoolname" [(ngModel)]="schoolname" class="form-control" id="exampleInputEmail1" >
                               
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Full Name</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                                <input type="text" name="name" [(ngModel)]="name" class="form-control" id="exampleInputEmail1"  >
                                 
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Student Reference Number</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                                <input type="text" name="sturef" [(ngModel)]="sturef" class="form-control" id="exampleInputEmail1"  >
                                 
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                                <input type="email" name="email" [(ngModel)]="email" class="form-control" id="exampleInputEmail1"  >
                                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Mobile Number</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+                                <input type="number" name="mobileno" [(ngModel)]="mobileno" class="form-control" id="exampleInputEmail1"  >
                                 <small id="emailHelp" class="form-text text-muted">*Provide active mobile number</small>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Amount</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                <input type="text" name="amount" [(ngModel)]="amount" class="form-control" id="exampleInputEmail1"  >
+                                <small id="emailHelp" class="form-text text-muted">Optional</small>
                             </div>
                             
                             <div class="form-check">
                               <input type="checkbox" class="form-check-input" id="exampleCheck1">
                               <label class="form-check-label" for="exampleCheck1">Send me the transaction details on my email.</label>
                             </div>
-                            <button mat-raised-button type="submit" class="material-btn">PROCEED WITH PAYMENT</button>
+                            <button mat-raised-button type="submit" class="material-btn form-control-submit-button">PROCEED WITH PAYMENT</button>
                           </form>
                     </div>
                   </div>
@@ -99,31 +105,42 @@
         </div>
     </div>
 </div>
+</div>
 <footer>
     <div class="top-footer">
-        <h1>Contact Information</h1>
+        <h1 style="color:#213743; font-weight:600; margin: 0;">Contact Information</h1>
        <ul style="display: flex; flex-direction: column; align-items: center; justify-content: center; list-style: none;">
-           <li>
+           <li class="text-muted">
             For other concerns and inquiries, message us at:
            </li>
-           <li>Mahinhin St., UP Village, Diliman, Quezon City</li>
-           <li>921-7555 | 921-7554 | 921-6472 | 921-6471 | 921-6617 | 921-7316 | 921-7399 |</li>
-           <li>Registrar's Local: 264, 237, 210, 221</li>
+           <li class="text-muted">Mahinhin St., UP Village, Diliman, Quezon City</li>
+           <small class="text-muted">921-7555 | 921-7554 | 921-6472 | 921-6471 | 921-6617 | 921-7316 | 921-7399 |</small>
+           <li class="text-muted">Registrar's Local: 264, 237, 210, 221</li>
        </ul>
 
 
     </div>
     <div class="bottom-footer" style="width: 100%; display: flex; justify-content: space-evenly; padding: 20px 10px;">
         
-        <div class="partners">
-            <h3>Partnership: </h3>
-            <img src="/assets/image 8.png" alt="">
+        <div class="row">
+            <div class="col-lg-5 col-sm-12">
+                <div class="partners">
+                    <h3 style="margin: 0; padding: 0; margin-right: 15px;">Partnership: </h3>
+                    <img src="/assets/image 8.png" style="max-height: 25px; " alt="">
+                </div>
+
+            </div>
+            <div class="col-lg-5 col-sm-12" >
+                <div class="partners" >
+                    <h3 style="margin: 0; padding: 0; margin-right: 15px; ">Powered by: </h3>
+                    <img src="/assets/image 7.png" style="max-height: 25px; " alt="">
+                        
+                </div>
+
+            </div>
         </div>
-        <div class="partners">
-            <h3>Powered by: </h3>
-            <img src="/assets/image 7.png" alt="">
-                
-        </div>
+        
+        
         
 
     </div>
